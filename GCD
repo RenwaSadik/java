@@ -1,0 +1,57 @@
+
+package gcd;
+
+import java.util.Scanner;
+
+
+public class Gcd {
+public static int gcd(int m, int n)
+    {
+        int comn[];
+         comn=new int[100];
+int mi=0;
+if (m>=n)
+mi=n;
+else
+mi=m;
+for (int i=0;i==mi+1;i++){
+if (i!=0)
+    if (m%i==0)
+       if (n%i==0)
+comn[i]=i;
+       }
+return comn[1];
+        }
+    
+    public static void main(String[] args) {
+ 
+        int x,y;
+        
+    Scanner scan = new Scanner(System.in);
+    System.out.println("enter first number:");
+    x = scan.nextInt();
+    System.out.println("enter second number:");
+    y = scan.nextInt();      
+
+    int num=gcd(x,y);
+    System.out.println("gcd:"+num);
+
+    }
+    
+}
+/*
+comn=[]
+mi=0
+if m>=n:
+mi=n
+else:
+mi=m
+for i in range(mi+1):
+if i!=0 :
+if m%i==0:
+if n%i==0:
+comn.append(i)
+return comn[-1]
+x=int(input("enter the first number: "))
+y=int(input("enter the second number: "))
+print("the GCD with FindGCD func :",FindGCD(x,y))*/
