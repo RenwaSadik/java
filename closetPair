@@ -1,0 +1,60 @@
+
+package closestpair;
+
+import java.util.Arrays;
+
+public class ClosestPair {
+    private static class numbers {
+        double num1, num2;
+        
+        public numbers(double num1, double num2) {
+            this.num1 = num1;
+            this.num2 = num2;
+        }
+    }
+    private static double distance(numbers p1, numbers p2) {
+        return Math.sqrt(Math.pow(p1.num1 - p2.num1, 2) + Math.pow(p1.num2 - p2.num2, 2));
+    }
+    private static double closest(numbers[] points) {
+        int n = points.length;
+        
+        // Base cases
+        if (n == 1) {
+            return Double.POSITIVE_INFINITY;
+        }
+        Arrays.sort(points, (p1, p2) -> Double.compare(p1.num1, p2.num1));
+        int mid = n / 2;
+        numbers midPoint = points[mid];
+        double left = closest(Arrays.copyOfRange(points, 0, mid));
+        double right= closest(Arrays.copyOfRange(points, mid, n));
+        double dis = Math.min(left, right);
+        numbers[] z = new numbers[n];
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            if (Math.abs(points[i].num1 - midPoint.num1) < dis) {
+                z[j] = points[i];
+                j++;
+            }
+        }
+        z = Arrays.copyOfRange(z, 0, j);
+        Arrays.sort(z, (p1, p2) -> Double.compare(p1.num2, p2.num2));
+        for (int i = 0; i < z.length; i++) {
+            for (int k = i + 1; k < z.length && (z[k].num2 - z[i].num2) < dis; k++) {
+                double stripDist = distance(z[i], z[k]);
+                if (stripDist < dis) {
+                    dis = stripDist;
+                }
+            }
+        }
+        return dis;
+    }
+    public static void main(String[] args) {
+        numbers[] arr = new numbers[]{
+            new numbers(52, 9),new numbers(28, 54),new numbers(24, 43),new numbers(90, 62),
+            new numbers(91, 56),new numbers(61, 23),new numbers(37, 11),new numbers(60, 1),
+            new numbers(67, 6),new numbers(90, 33) };
+        
+        double d = closest(arr);
+        System.out.println("distance is " + d);
+    }
+}
