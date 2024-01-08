@@ -1,0 +1,909 @@
+package projectdraft;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+
+public class home extends JFrame {
+     int pas;
+     String name,email ;
+     String pass,age,pn;
+     ImageIcon icon,icon2,icon3;
+
+
+    public home (){
+        
+        setTitle("NOWA");
+        setSize(600,450);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new GridLayout(3,1));
+        icon =new ImageIcon("p12-Copy.png");
+        JLabel l1 = new JLabel(icon,SwingConstants.LEFT);
+        
+        JPanel labelhere = new JPanel();
+        JPanel imagehere = new JPanel();
+        JPanel buttonshere = new JPanel();
+        
+        
+        labelhere.setBackground(Color.decode("#C6E7C8"));
+        imagehere.setBackground(Color.decode("#C6E7C8"));
+        buttonshere.setBackground(Color.decode("#C6E7C8"));
+
+        
+        JButton button1 = new JButton("SIGN IN");
+        button1.setForeground(Color.WHITE);
+        button1.setBackground(Color.decode("#FF9999"));
+
+        JButton button2 = new JButton("SIGN UP");
+        button2.setForeground(Color.WHITE);
+        button2.setBackground(Color.decode("#FF9999"));
+
+        JButton button3 = new JButton("ABOUT US");
+        button3.setForeground(Color.WHITE);
+        button3.setBackground(Color.decode("#FF9999"));
+
+        JLabel label1 = new JLabel("WELCOME TO NOWA GYM");
+        label1.setFont(new Font ("Serif",Font.BOLD,30));
+        label1.setForeground(Color.decode("#FF9999"));
+   
+      
+        imagehere.add(l1);
+        labelhere.add(label1);
+        buttonshere.add(button1);
+        buttonshere.add(button2);
+        buttonshere.add(button3);
+
+        
+        add(labelhere);
+        add(buttonshere);
+        add(imagehere);
+      
+
+        setLocationRelativeTo(null); 
+        setVisible(true);
+        
+        button1.addActionListener(new signin());
+        button2.addActionListener(new signUp());
+        button3.addActionListener(new aboutus());
+    }
+    
+    private class signin implements ActionListener{
+       @Override
+       public void actionPerformed(ActionEvent e){
+        JFrame n=new JFrame();
+        
+        n.setTitle("NOWA - Home");
+        n.setSize(600,450);
+        n.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        n.setLayout(new GridLayout(6,3));
+        
+        JPanel panel1 = new JPanel();
+        JPanel panel2 = new JPanel();
+        JPanel panel3 = new JPanel();
+        JPanel panel4 = new JPanel();
+        JPanel panel5 = new JPanel();
+        JPanel panel6 = new JPanel();
+        JPanel panel7 = new JPanel();
+        JPanel panel8 = new JPanel();
+        JPanel panel9 = new JPanel();
+        JPanel panel10 = new JPanel();
+        JPanel panel11= new JPanel();
+        JPanel panel12 = new JPanel();
+        JPanel panel13 = new JPanel();
+        JPanel panel14 = new JPanel();
+        JPanel panel15= new JPanel();
+        JPanel panel16= new JPanel();
+        JPanel panel17= new JPanel();
+        JPanel panel18= new JPanel();
+        
+        JButton button1 = new JButton("SIGN IN");
+        button1.setForeground(Color.WHITE);
+        button1.setBackground(Color.decode("#FF9999"));
+        
+        JLabel  label1 = new JLabel("welcome");
+        label1.setFont(new Font("Serif", Font.BOLD, 35));
+        label1.setForeground(Color.decode("#FF9999"));
+        
+        JLabel  label2 = new JLabel("sign in");
+        label2.setFont(new Font("Serif", Font.ROMAN_BASELINE,27));
+        label2.setForeground(Color.GRAY);
+        
+        JLabel  label3 = new JLabel(" Enter Name");
+        label3.setFont(new Font("Serif", Font.PLAIN, 24));
+        label3.setForeground(Color.decode("#FF9999"));
+        
+        JLabel  label4 = new JLabel("Enter Password");
+        label4.setFont(new Font("Serif", Font.PLAIN, 24));
+        label4.setForeground(Color.decode("#FF9999"));
+        
+      
+        JTextField Textfield1 = new JTextField(10);
+        JTextField Textfield2 = new JTextField(10);
+        
+        
+        panel1.add(label1);
+        panel4.add(label2);
+        panel8.add(label3);
+        panel8.add(Textfield1);
+        panel11.add(label4);
+        panel11.add(Textfield2);
+        panel15.add(button1);
+
+        
+        n.add(panel1);
+        n.add(panel2);
+        n.add(panel3);
+        n.add(panel4);
+        n.add(panel5);
+        n.add(panel6);
+        n.add(panel7);
+        n.add(panel8);
+        n.add(panel9);
+        n.add(panel10);
+        n.add(panel11);
+        n.add(panel12);
+        n.add(panel13);
+        n.add(panel14);
+        n.add(panel15);
+        n.add(panel16);
+        n.add(panel17);
+        n.add(panel18);
+        
+        panel1.setBackground(Color.decode("#C6E7C8"));
+        panel2.setBackground(Color.decode("#C6E7C8"));
+        panel2.setBackground(Color.decode("#C6E7C8"));
+        panel3.setBackground(Color.decode("#C6E7C8"));
+        panel4.setBackground(Color.decode("#C6E7C8"));
+        panel5.setBackground(Color.decode("#C6E7C8"));
+        panel6.setBackground(Color.decode("#C6E7C8"));
+        panel7.setBackground(Color.decode("#C6E7C8"));
+        panel8.setBackground(Color.decode("#C6E7C8"));
+        panel9.setBackground(Color.decode("#C6E7C8"));
+        panel10.setBackground(Color.decode("#C6E7C8"));
+        panel11.setBackground(Color.decode("#C6E7C8"));
+        panel12.setBackground(Color.decode("#C6E7C8"));
+        panel13.setBackground(Color.decode("#C6E7C8"));
+        panel14.setBackground(Color.decode("#C6E7C8"));
+        panel15.setBackground(Color.decode("#C6E7C8"));
+        panel16.setBackground(Color.decode("#C6E7C8"));
+        panel17.setBackground(Color.decode("#C6E7C8"));
+        panel18.setBackground(Color.decode("#C6E7C8"));
+        
+        
+        n.setLocationRelativeTo(null); 
+        n.setVisible(true);
+        
+       button1.addActionListener (new ActionListener(){
+          
+        @Override
+        public void actionPerformed(ActionEvent n) {
+            
+        
+        try{
+          File name=new File("Customers.txt");
+           
+               Scanner na=new Scanner(name);
+               while(na.hasNext()){
+                String line=na.next();
+                
+            if(line.equalsIgnoreCase(Textfield1.getText())){
+                 try{
+               File pass=new File("Customers.txt");
+               Scanner pa=new Scanner(pass);
+               while(pa.hasNext()){
+               String ln=pa.next();
+               if(ln.equalsIgnoreCase(Textfield2.getText())){
+                   button1.addActionListener(new newuser());
+                        break;}
+            }}
+                catch (FileNotFoundException ex) {
+                System.out.println("error occour");         
+           }   
+        }}
+           } catch (FileNotFoundException ex) {
+                System.out.println("error occour");         
+           }
+           }
+        }); 
+    }
+    }
+        private class signUp implements ActionListener { 
+            
+        
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        
+        JFrame f=new JFrame();
+        f.setTitle("NOWA - sign up");
+        f.setSize(600,400);
+        f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        f.setLayout(new GridLayout(7,3));
+        
+        
+        JPanel panel = new JPanel();
+        JPanel panel1 = new JPanel();
+        JPanel panel2 = new JPanel();
+        JPanel panel3 = new JPanel();
+        JPanel panel4 = new JPanel();
+        JPanel panel5 = new JPanel();
+        JPanel panel6 = new JPanel();
+        JPanel panel7 = new JPanel();
+        JPanel panel8 = new JPanel();
+        JPanel panel9 = new JPanel();
+        JPanel panel10 = new JPanel();
+        JPanel panel11 = new JPanel();
+        JPanel panel12 = new JPanel();
+        JPanel panel13 = new JPanel();
+        JPanel panel14 = new JPanel();
+        JPanel panel15 = new JPanel();
+        JPanel panel16 = new JPanel();
+        JPanel panel17 = new JPanel();
+        JPanel panel18 = new JPanel();
+        JPanel panel19 = new JPanel();
+        JPanel panel20 = new JPanel();
+        
+        
+        panel.setBackground(Color.decode("#C6E7C8"));
+        panel1.setBackground(Color.decode("#C6E7C8"));
+        panel2.setBackground(Color.decode("#C6E7C8"));
+        panel2.setBackground(Color.decode("#C6E7C8"));
+        panel3.setBackground(Color.decode("#C6E7C8"));
+        panel4.setBackground(Color.decode("#C6E7C8"));
+        panel5.setBackground(Color.decode("#C6E7C8"));
+        panel6.setBackground(Color.decode("#C6E7C8"));
+        panel7.setBackground(Color.decode("#C6E7C8"));
+        panel8.setBackground(Color.decode("#C6E7C8"));
+        panel9.setBackground(Color.decode("#C6E7C8"));
+        panel10.setBackground(Color.decode("#C6E7C8"));
+        panel11.setBackground(Color.decode("#C6E7C8"));
+        panel12.setBackground(Color.decode("#C6E7C8"));
+        panel13.setBackground(Color.decode("#C6E7C8"));
+        panel14.setBackground(Color.decode("#C6E7C8"));
+        panel15.setBackground(Color.decode("#C6E7C8"));
+        panel16.setBackground(Color.decode("#C6E7C8"));
+        panel17.setBackground(Color.decode("#C6E7C8"));
+        panel18.setBackground(Color.decode("#C6E7C8"));
+        panel19.setBackground(Color.decode("#C6E7C8"));
+        panel20.setBackground(Color.decode("#C6E7C8"));
+        
+        
+        JButton button1 = new JButton("CREATE");
+        button1.setForeground(Color.WHITE);
+        button1.setBackground(Color.decode("#FF9999"));
+
+        JLabel  title = new JLabel("Sign Up");
+        title.setFont(new Font ("Serif",Font.BOLD,35));
+        title.setForeground(Color.decode("#FF9999"));
+        
+        JLabel  label1 = new JLabel("name");
+        label1.setFont(new Font ("Serif",Font.PLAIN,20));
+        label1.setForeground(Color.decode("#FF9999"));
+        
+        JLabel  label2 = new JLabel("Password");
+        label2.setFont(new Font ("Serif",Font.PLAIN,20));
+        label2.setForeground(Color.decode("#FF9999"));
+        
+        JLabel  label3 = new JLabel("phone");
+        label3.setFont(new Font ("Serif",Font.PLAIN,20));
+        label3.setForeground(Color.decode("#FF9999"));
+        
+        JLabel  label4 = new JLabel("age");
+        label4.setFont(new Font ("Serif",Font.PLAIN,20));
+        label4.setForeground(Color.decode("#FF9999"));
+        
+        String[] gender = {"Male", "Female"};
+        JComboBox cb1 = new JComboBox (gender);
+        cb1.setBorder(BorderFactory.createTitledBorder("Gender"));
+        cb1.setForeground(Color.black);
+        cb1.setBackground(Color.decode("#C6E7C8"));
+
+        JTextField Textfield1 = new JTextField(6);
+        JTextField Textfield2 = new JTextField(6);
+        JTextField Textfield3 = new JTextField(6);
+        JTextField Textfield4 = new JTextField(6);
+       
+     
+        panel.add(title);
+        panel1.add(label1);
+        panel1.add(Textfield1);
+        panel2.add(label2);
+        panel2.add(Textfield2);
+        panel3.add(label3);
+        panel3.add(Textfield3);
+        panel4.add(label4);
+        panel4.add(Textfield4);
+        panel5.add(cb1);
+        panel6.add(button1);
+        
+        f.add(panel10);
+        f.add(panel);
+        f.add(panel7);
+        f.add(panel8);
+        f.add(panel1);
+        f.add(panel9);
+        f.add(panel11);
+        f.add(panel2);
+        f.add(panel12);
+        f.add(panel13);
+        f.add(panel3);
+        f.add(panel14);
+        f.add(panel15);
+        f.add(panel4);
+        f.add(panel16);
+        f.add(panel17);
+        f.add(panel5);
+        f.add(panel18);
+        f.add(panel19);
+        f.add(panel20);
+        f.add(panel6);
+        
+        
+        f.setLocationRelativeTo(null); 
+        f.setVisible(true);
+
+     button1.addActionListener (new ActionListener(){
+          
+        @Override
+        public void actionPerformed(ActionEvent n) {
+            if((Textfield2.getText()).length()<6){
+            JOptionPane.showMessageDialog(null, "Password has to be 6 digits at least !!");
+        }
+            else if((Textfield3.getText()).length()!=10){
+            JOptionPane.showMessageDialog(null, "incorrect phone number");
+            
+        }
+            else {
+             button1.addActionListener(new newuser());
+         }
+           try{
+               int number=Integer.parseInt(Textfield3.getText());
+           } 
+           catch(NumberFormatException e){
+               JOptionPane.showMessageDialog(null, "phone number has to be a number !!");
+           }
+        try{
+          
+        FileWriter file=new FileWriter("Customers.txt",true);
+        PrintWriter wr = new PrintWriter(file);
+        wr.print(Textfield1.getText()+"\t\t");
+        wr.print(Textfield2.getText()+"\t\t");
+        wr.print(Textfield3.getText()+"\t\t");
+        wr.println(Textfield4.getText()+"\t\t");
+       
+        wr.close();  
+           }
+        catch(IOException e){
+        System.out.println("error occour"+e.getMessage());
+        }
+    }
+        }); 
+       }
+    }
+        
+        private class newuser implements ActionListener{
+       @Override
+       public void actionPerformed(ActionEvent e){
+           
+
+        JFrame a=new JFrame();
+        
+        a.setTitle("NOWA - My Profile");
+        a.setSize(600,450);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+               a.setBackground(Color.decode("#C6E7C8"));
+
+        JLabel ta = new JLabel("WELCOME TO NOWA GYM " ,SwingConstants.CENTER);
+        ta.setFont(new Font ("Serif",Font.PLAIN,40));
+        ta.setForeground(Color.PINK);
+        JMenuBar mb = new JMenuBar();
+        JMenu m2 = new JMenu ("classes");
+        JMenu m3 = new JMenu ("more");
+        JMenuItem i1 = new JMenuItem("learn more");
+        JMenuItem i2 = new JMenuItem("book a class");
+        JMenuItem i3 = new JMenuItem("About us");
+        
+        i3.addActionListener(new aboutus());
+        i2.addActionListener(new current());
+        i1.addActionListener(new prev());
+        mb.add(m2);
+        mb.add(m3);
+        m2.add(i2);
+        m2.add(i1);
+        m3.add(i3);
+        a.add(ta);
+        a.setJMenuBar(mb);
+        a.setLocationRelativeTo(null); 
+        a.setVisible(true);
+           
+       }
+        }
+        
+
+       private class prev implements ActionListener{
+       @Override
+       public void actionPerformed(ActionEvent e){
+           
+        JFrame c=new JFrame();
+        c.setTitle("classes");
+        c.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        c.setLayout(new GridLayout(4,2));
+        c.setSize(600,600);
+        
+        icon3 =new ImageIcon("WhatsApp Image 2022-11-06 at 9.30-fococlipping-standard.png");
+        JLabel l1 = new JLabel(icon3,SwingConstants.LEFT);
+        
+        String yoge=("Classes are conducted by experts.Our \naim is to provide authenticity,"
+                + "traditions\n as well as modern,scientific\n approach to yoga.");
+       
+        String tennis=("Our programme of tennis lessons provide \na great place to get started and develop \nyour skills."
+               + " From beginner tennis lessons\n to advanced coaching.");
+        String zumbe=("Classes are designed as 45-60 minute\n group exercise "
+               + "classes led by a certifie\nZumba instructor.This sport helps you\n burn calories very quickly.");
+
+        String swimming=("swimming training classes provide quality\n diverse program options "
+              + ",teach our\n community to become stronger swimmer\n and provide healthy aquatic activities.");
+        String basketball=("basketball is a better way to work your\n muscles.The more lean mass you have\n,"
+               + "Our Better selection of basketball courts\n and facilities offers.");
+        
+
+      
+        JTextArea y= new JTextArea(yoge,4,4);
+        y.setBorder(BorderFactory.createTitledBorder("YOGA"));
+        y.setForeground(Color.decode("#FF9999"));
+        y.setBackground(Color.decode("#C6E7C8"));
+        y.setEditable(false);
+        
+        JTextArea t= new JTextArea(tennis,4,4);
+        t.setBorder(BorderFactory.createTitledBorder("TENNIS"));
+        t.setForeground(Color.decode("#FF9999"));
+        t.setBackground(Color.decode("#C6E7C8"));
+        t.setEditable(false);
+        
+        JTextArea z= new JTextArea(zumbe,4,4);
+        z.setBorder(BorderFactory.createTitledBorder("ZUMBA"));
+        z.setForeground(Color.decode("#FF9999"));
+        z.setBackground(Color.decode("#C6E7C8"));
+        z.setEditable(false);
+        
+        JTextArea s= new JTextArea(swimming,4,4);
+        s.setBorder(BorderFactory.createTitledBorder("SWIMMING"));
+        s.setForeground(Color.decode("#FF9999"));
+        s.setBackground(Color.decode("#C6E7C8"));
+        s.setEditable(false);
+        
+        JTextArea b= new JTextArea(basketball,4,4);
+        b.setBorder(BorderFactory.createTitledBorder("BASKETBALL"));
+        b.setForeground(Color.decode("#FF9999"));
+        b.setBackground(Color.decode("#C6E7C8"));
+        b.setEditable(false);
+        
+        JLabel  label1 = new JLabel("Our Classes");
+        label1.setFont(new Font("Serif", Font.BOLD, 30));
+        label1.setForeground(Color.decode("#FF9999"));
+        
+        JPanel panel1 = new JPanel();
+        JPanel panel2 = new JPanel();
+        JPanel panel3 = new JPanel();
+        JPanel panel4 = new JPanel();
+        JPanel panel5 = new JPanel();
+        JPanel panel6 = new JPanel();
+        JPanel panel7 = new JPanel();
+        JPanel panel8 = new JPanel();
+        
+        panel1.setBackground(Color.decode("#C6E7C8"));
+        panel2.setBackground(Color.decode("#C6E7C8"));
+        panel2.setBackground(Color.decode("#C6E7C8"));
+        panel3.setBackground(Color.decode("#C6E7C8"));
+        panel4.setBackground(Color.decode("#C6E7C8"));
+        panel5.setBackground(Color.decode("#C6E7C8"));
+        panel6.setBackground(Color.decode("#C6E7C8"));
+        panel7.setBackground(Color.decode("#C6E7C8"));
+        panel8.setBackground(Color.decode("#C6E7C8"));
+       
+        panel1.add(label1);  
+        panel3.add(y);
+        panel4.add(t);
+        panel5.add(z);
+        panel6.add(s);
+        panel7.add(b);
+        panel8.add(l1);
+        
+        c.add(panel1);
+        c.add(panel2);
+        c.add(panel3);
+        c.add(panel4);
+        c.add(panel5);
+        c.add(panel6);
+        c.add(panel7);
+        c.add(panel8);
+        
+        
+        c.setLocationRelativeTo(null);
+        c.setVisible(true);
+
+       }
+       
+    }
+        
+       private class current implements ActionListener{
+       @Override
+       public void actionPerformed(ActionEvent e){
+           
+        JFrame c=new JFrame();
+        c.setTitle("Book a class");
+        c.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        c.setLayout(new GridLayout(5,1));
+        c.setSize(650,550);
+        
+        icon2 =new ImageIcon("WhatsApp Image 2022-11-06 at 9.41-fococlipping-standard.png");
+        JLabel l1 = new JLabel(icon2,SwingConstants.CENTER);
+        
+        JPanel panel = new JPanel();
+        JPanel panel1 = new JPanel();
+        JPanel panel2 = new JPanel();
+        JPanel panel3 = new JPanel();
+        JPanel panel4 = new JPanel();
+        
+        panel.setBackground(Color.decode("#C6E7C8"));
+        panel1.setBackground(Color.decode("#C6E7C8"));
+        panel2.setBackground(Color.decode("#C6E7C8"));
+        panel3.setBackground(Color.decode("#C6E7C8"));
+        panel4.setBackground(Color.decode("#C6E7C8"));
+
+        String[] sports = {"yoge", "Basketball","swimming","tennis","zumba"};
+        JTextField Textfield1 = new JTextField(6);
+        
+        JComboBox cb1 = new JComboBox (sports);
+        cb1.setForeground(Color.GRAY);
+        cb1.setFont(new Font("Serif", Font.BOLD, 15));
+
+        JLabel label1 = new JLabel ("Sports:");
+        label1.setForeground(Color.decode("#FF9999"));
+        label1.setFont(new Font("Serif", Font.TYPE1_FONT, 17));
+
+        JLabel label2 = new JLabel ("Time:");
+        label2.setForeground(Color.decode("#FF9999"));
+        label2.setFont(new Font("Serif", Font.TYPE1_FONT, 17));
+
+        JLabel label3 = new JLabel ("Date:");
+        label3.setForeground(Color.decode("#FF9999"));
+        label3.setFont(new Font("Serif", Font.TYPE1_FONT, 17));
+        
+        JButton button1 = new JButton("OK");
+        button1.setForeground(Color.WHITE);
+        button1.setBackground(Color.decode("#FF9999"));
+
+        JRadioButton R1=new JRadioButton("2-4PM");
+        R1.setForeground(Color.decode("#FF9999"));
+        R1.setFont(new Font("Serif", Font.BOLD, 15));
+        R1.setBackground(Color.decode("#C6E7C8"));
+
+        JRadioButton R2=new JRadioButton("4-6PM");
+        R2.setForeground(Color.decode("#FF9999"));
+        R2.setFont(new Font("Serif", Font.BOLD, 15));
+        R2.setBackground(Color.decode("#C6E7C8"));
+
+
+        JRadioButton R3=new JRadioButton("6-8PM");
+        R3.setForeground(Color.decode("#FF9999"));
+        R3.setFont(new Font("Serif", Font.BOLD, 15));
+        R3.setBackground(Color.decode("#C6E7C8"));
+
+
+        JRadioButton R4=new JRadioButton("8-10PM");
+        R4.setForeground(Color.decode("#FF9999"));
+        R4.setFont(new Font("Serif", Font.BOLD, 15));
+        R4.setBackground(Color.decode("#C6E7C8"));
+
+        ButtonGroup group = new ButtonGroup();
+        group.add(R1);
+        group.add(R2);
+        group.add(R3);
+        group.add(R4);
+        
+        
+        panel.add(label1);
+        panel.add(cb1);
+        panel1.add(label2);
+        panel1.add(R1);
+        panel1.add(R2);
+        panel1.add(R3);
+        panel1.add(R4);
+        panel2.add(label3);
+        panel2.add(Textfield1);
+        panel3.add(button1);
+        panel4.add(l1);
+        
+        
+        c.add(panel);
+        c.add(panel1);
+        c.add(panel2);
+        c.add(panel3);
+        c.add(panel4);
+
+        
+        c.setLocationRelativeTo(null); 
+        c.setVisible(true);
+        
+        button1.addActionListener (new ActionListener(){
+          
+          @Override
+          public void actionPerformed(ActionEvent n) {
+           try{
+          
+        FileWriter file=new FileWriter("Customers.txt",true);
+        PrintWriter wr = new PrintWriter(file);
+        wr.print("sports:"+cb1.getSelectedItem()+"\t\t");
+        
+        if (R1.isSelected()){
+        wr.print("time:2-4PM"+"\t\t");
+        }
+        else if(R2.isSelected()){
+        wr.print("time:4-6PM"+"\t\t");
+        }
+        else if(R3.isSelected()){
+        wr.print("time:6-8PM"+"\t\t");
+        }
+        else if(R4.isSelected()){
+        wr.print("time:8-10PM"+"\t\t");
+        }
+        wr.print("Data:"+Textfield1.getText()+"\t\t\n");
+        wr.close();  
+           }
+        catch(IOException e){
+        System.out.println("error occour"+e.getMessage());
+        }
+           
+        JFrame c=new JFrame();
+        c.setTitle("book classes");
+        c.setSize(400,300);
+        c.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        c.setLayout(new GridLayout(4,1));
+        
+        JPanel p= new JPanel();
+        JPanel panel = new JPanel();
+        JPanel panel1 = new JPanel();
+        JPanel panel2 = new JPanel();
+        
+        p.setBackground(Color.decode("#C6E7C8"));
+        panel.setBackground(Color.decode("#C6E7C8"));
+        panel1.setBackground(Color.decode("#C6E7C8"));
+        panel2.setBackground(Color.decode("#C6E7C8"));
+        
+        JLabel la = new JLabel ("Booked Successfully");
+        la.setFont(new Font ("Serif",Font.BOLD,30));
+        la.setForeground(Color.decode("#FF9999"));
+        
+        JLabel label1 = new JLabel ("Sports:");
+        label1.setForeground(Color.decode("#FF9999"));
+        label1.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+        
+        JLabel label2 = new JLabel ("Time:");
+        label2.setForeground(Color.decode("#FF9999"));
+        label2.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+
+        JLabel label3 = new JLabel ("Date:");
+        label3.setForeground(Color.decode("#FF9999"));
+        label3.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+
+        if(cb1.getSelectedItem()=="yoge"){
+        JLabel label5 = new JLabel ("Yoga");
+        label5.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+        label5.setForeground(Color.decode("#FF9999"));
+        panel.add(label1);
+        panel.add(label5);
+       }
+       else if(cb1.getSelectedItem()=="Basketball"){
+        JLabel label5 = new JLabel ("Basketball");
+        label5.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+        label5.setForeground(Color.decode("#FF9999"));
+        panel.add(label1);
+        panel.add(label5);
+       }
+       else if(cb1.getSelectedItem()=="swimming"){
+        JLabel label5 = new JLabel ("Swimming");
+        label5.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+        label5.setForeground(Color.decode("#FF9999"));
+        panel.add(label1);
+        panel.add(label5);
+       }
+       else if(cb1.getSelectedItem()=="tennis"){
+        JLabel label5 = new JLabel ("Tennis");
+        label5.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+        label5.setForeground(Color.decode("#FF9999"));
+        panel.add(label1);
+        panel.add(label5);
+       }
+       else if(cb1.getSelectedItem()=="zumba"){
+       JLabel label5 = new JLabel ("Zumba");
+       label5.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+       label5.setForeground(Color.decode("#FF9999"));
+       panel.add(label1);
+       panel.add(label5);
+       }
+       
+        
+        if (R1.isSelected()){
+        JLabel label4 = new JLabel ("2-4PM"+"\t\t");
+        label4.setForeground(Color.decode("#FF9999"));
+        label4.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+        panel1.add(label2);
+        panel1.add(label4);
+
+        }
+        else if(R2.isSelected()){
+        JLabel label10 = new JLabel("4-6PM"+"\t\t");
+        label10.setForeground(Color.decode("#FF9999"));
+        label10.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+        panel1.add(label2);
+        panel1.add(label10);
+
+        }
+        else if(R3.isSelected()){
+        JLabel label4 = new JLabel("6-8PM"+"\t\t");
+        label4.setForeground(Color.decode("#FF9999"));
+        label4.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+        panel1.add(label2);
+        panel1.add(label4);
+
+        }
+        else if(R4.isSelected()){
+        JLabel label4 = new JLabel("8-10PM"+"\t\t");
+        label4.setForeground(Color.decode("#FF9999"));
+        label4.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+        panel1.add(label2);
+        panel1.add(label4);
+
+        }
+        
+        JLabel label8 = new JLabel(Textfield1.getText()+"\t\t\n");
+        label8.setForeground(Color.decode("#FF9999"));
+        label8.setFont(new Font ("Serif",Font.TYPE1_FONT,17));
+
+        p.add(la);
+        panel2.add(label3);
+        panel2.add(label8);
+        
+        c.add(p);
+        c.add(panel);
+        c.add(panel1);
+        c.add(panel2);
+        
+        c.setLocationRelativeTo(null); 
+        c.setVisible(true);
+          }        
+          
+        }); 
+        }
+                        
+      }
+        private class aboutus implements ActionListener{
+       @Override
+       public void actionPerformed(ActionEvent e){
+        JFrame r=new JFrame();
+        
+        r.setTitle("ABOUT NEWA");
+        r.setSize(600,400);
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        setLayout(new BorderLayout());
+        
+        JLabel label2 = new JLabel ("                       Locations                      ");
+        label2.setFont(new Font ("Serif",Font.BOLD,30));
+        label2.setForeground(Color.GRAY);
+        
+        JButton button1 = new JButton("JEDDAH");
+        button1.setForeground(Color.WHITE);
+        button1.setBackground(Color.decode("#FF9999"));
+        
+        JButton button2 = new JButton("ALRIYADH");
+        button2.setForeground(Color.WHITE);
+        button2.setBackground(Color.decode("#FF9999"));
+        
+        JButton button3 = new JButton("KHOBAR");
+        button3.setForeground(Color.WHITE);
+        button3.setBackground(Color.decode("#FF9999"));
+        
+        JButton button4 = new JButton("CONTACT US");
+        button4.setForeground(Color.WHITE);
+        button4.setBackground(Color.decode("#FF9999"));
+          
+        JLabel label3 = new JLabel("About NEWA");
+        label3.setFont(new Font ("Serif",Font.BOLD,35));
+        label3.setForeground(Color.GRAY);
+        
+        JLabel l2 = new JLabel("we are here to help more people,lead healither ");
+        l2.setFont(new Font ("DialogInput",Font.PLAIN,15));
+        l2.setForeground(Color.decode("#FF9999"));
+
+        JLabel l3 = new JLabel("lives every day.we are committed to bringing high");
+        l3.setFont(new Font ("DialogInput",Font.PLAIN,15));
+        l3.setForeground(Color.decode("#FF9999"));
+
+        JLabel l4 = new JLabel("quality,affordable gym to everyone our mission is to provide");
+        l4.setFont(new Font ("DialogInput",Font.PLAIN,15));
+        l4.setForeground(Color.decode("#FF9999"));
+
+        JLabel l5 = new JLabel("our members with safe,accepting and welcoming environment.");
+        l5.setFont(new Font ("DialogInput",Font.PLAIN,15));
+        l5.setForeground(Color.decode("#FF9999"));
+        
+
+
+        JPanel panel1 = new JPanel();
+        JPanel panel2 = new JPanel();
+        JPanel panel3 = new JPanel();
+        JPanel panel4 = new JPanel();
+        JPanel panel5 = new JPanel();
+        
+        panel1.setBackground(Color.decode("#C6E7C8"));
+        panel2.setBackground(Color.decode("#C6E7C8"));
+        panel3.setBackground(Color.decode("#C6E7C8"));
+        panel4.setBackground(Color.decode("#C6E7C8"));
+        panel5.setBackground(Color.decode("#C6E7C8"));
+
+        panel1.add(label3);
+        panel2.add(button4);
+        panel5.add(l2);
+        panel5.add(l3);
+        panel5.add(l4);
+        panel5.add(l5);
+        panel5.add(label2);
+        panel5.add(button2);
+        panel5.add(button3);
+        panel5.add(button1);
+        
+
+        r.add(panel1, BorderLayout.NORTH);
+        r.add(panel2, BorderLayout.SOUTH);
+        r.add(panel3, BorderLayout.EAST);
+        r.add(panel4, BorderLayout.WEST);
+        r.add(panel5, BorderLayout.CENTER);
+        
+        
+        r.setLocationRelativeTo(null); 
+        r.setVisible(true);
+        button1.addActionListener(new loc());
+        button2.addActionListener(new loc());
+        button3.addActionListener(new loc());
+        button4.addActionListener(new con());
+
+    }
+         private class loc implements ActionListener {         
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String action=e.getActionCommand();
+            if(action.equalsIgnoreCase("Jeddah")){
+                    JOptionPane.showMessageDialog(null, "prince Naif Rd,Al Shera'a,Jeddah 23816");
+                }
+             if(action.equalsIgnoreCase("Alriyadh")){
+                    JOptionPane.showMessageDialog(null, "King Abdullah Ibn Abdul Aziz Rd\n,Salahuddin,Riyadh 12434");
+                }
+            if(action.equalsIgnoreCase("khobar")){
+                    JOptionPane.showMessageDialog(null, "Al Bustan, Al Khobar 34422");
+                }
+        }
+                
+    }
+           private class con implements ActionListener {       
+        @Override
+        public void actionPerformed(ActionEvent e) {
+              String action=e.getActionCommand();
+            if(action.equalsIgnoreCase("contact us")){
+                
+            }
+                    JOptionPane.showMessageDialog(null, "920021111");
+
+
+}
+           }
+        }
+}
+        
